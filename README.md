@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# Demo Book List 📖
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CRUD React** application within a **REST** architecture. It is written in **TypeScript** with **SCSS**. It uses [fake REST API ^0.17.4](https://github.com/typicode/json-server) for CRUD operations. The application features a **responsive** layout, **custom hooks** and **Context API** for state management.
 
-Currently, two official plugins are available:
+Here is a simple guide how to run the project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js installed on your machine
+- npm or yarn package manager installed
+- Git
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+
+```sh
+git clone https://github.com/k7bart/books.git
+cd books
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm install
 ```
+
+or
+
+```sh
+yarn install
+```
+
+## Running the Application
+
+1. Start the fake REST API server:
+
+```sh
+cd server
+npm start
+```
+
+or
+
+```sh
+cd server
+yarn start
+```
+
+2. Start the React application:
+
+```sh
+npm run dev
+```
+
+or
+
+```sh
+yarn run dev
+```
+
+3. Access the application:
+
+Open your browser and navigate to `http://localhost:5174/` (the port may vary based on availability) to see the application in action.

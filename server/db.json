@@ -1,0 +1,51 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "isbn": "9780061120084",
+      "isActive": true,
+      "createdAt": "2025-03-10T08:05:43.466Z"
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Fiction",
+      "isbn": "9780452284234",
+      "isActive": false,
+      "createdAt": "2025-03-10T08:05:43.466Z",
+      "modifiedAt": "2025-03-10T08:07:11.645Z"
+    },
+    {
+      "id": "3",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "category": "Fiction",
+      "isbn": "9780316769480",
+      "isActive": true,
+      "createdAt": "2025-03-10T08:05:43.466Z",
+      "modifiedAt": "2025-03-10T08:07:18.049Z"
+    },
+    {
+      "id": "g6kM3bs",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Tragedy",
+      "isbn": "9780743273565",
+      "isActive": false,
+      "createdAt": "2025-03-10T08:05:43.466Z"
+    },
+    {
+      "id": "4",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "category": "Romance",
+      "isbn": "9780141040349",
+      "isActive": true,
+      "createdAt": "2025-03-10T08:05:43.466Z"
+    }
+  ]
+}

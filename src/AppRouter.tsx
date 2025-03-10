@@ -1,14 +1,28 @@
-import BookForm from "./components/book-form/BookForm";
-import Dashboard from "./components/dashboard/Dashboard";
+import { RouteObject } from "react-router-dom";
 
-const routes = [
+import CreateBook from "./pages/create-book/CreateBook";
+import EditBook from "./pages/edit-book/EditBook";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Root from "./components/root/Root";
+
+const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Dashboard />,
-  },
-  {
-    path: "/form",
-    element: <BookForm />,
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "/book",
+        element: <CreateBook />,
+      },
+      {
+        path: "/book/:id",
+        element: <EditBook />,
+      },
+    ],
   },
 ];
 

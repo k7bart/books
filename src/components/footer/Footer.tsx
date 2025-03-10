@@ -1,14 +1,14 @@
-import styles from "./Footer.module.scss";
+import GithubIcon from "../icons/GithubIcon";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
+    <footer>
       <a
         href="https://github.com/k7bart"
         target="_blank"
         rel="noopener noreferrer"
       >
-        GitHub
+        <GithubIcon />
       </a>
     </footer>
   );
