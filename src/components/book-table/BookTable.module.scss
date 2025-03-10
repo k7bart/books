@@ -1,0 +1,93 @@
+@use "../../styles/variables.scss" as *;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.5rem 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: $surface-color;
+
+    &:last-child {
+      position: sticky;
+      right: 0;
+    }
+  }
+
+  tr {
+    &:nth-child(even) td {
+      background-color: $overlay-color;
+    }
+
+    &.deactivated {
+      color: $muted-color;
+    }
+  }
+}
+
+.action {
+  display: inline-flex;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background-color: transparent;
+  font-weight: bold;
+  transition: 0.2s linear;
+
+  svg {
+    fill: $text-color-muted;
+  }
+
+  &:not(:disabled):hover {
+    background-color: $base-color;
+    border: 1px solid $muted-color;
+
+    svg {
+      fill: $text-color;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    svg {
+      fill: $muted-color;
+    }
+  }
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 2rem;
+}
+
+.filter {
+  display: flex;
+  gap: 1rem;
+
+  label {
+    padding-left: 0.5rem;
+  }
+}
