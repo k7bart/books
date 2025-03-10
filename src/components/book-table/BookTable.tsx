@@ -31,10 +31,6 @@ const BookTable: React.FC<Props> = ({ onDelete, onToggleActive }) => {
     return books;
   }, [books, filter]);
 
-  if (!filteredBooks.length) {
-    return "No books";
-  }
-
   return (
     <>
       <div className={styles.header}>
@@ -64,54 +60,58 @@ const BookTable: React.FC<Props> = ({ onDelete, onToggleActive }) => {
         </div>
       </div>
 
-      <div className={styles.tableWrapper}>
-        <table className={styles.table}>
-          <thead>
-            <tr className={styles.tableRow}>
-              {tableHeaders.map((header) => (
-                <th key={header}>{header}</th>
-              ))}
-            </tr>
-          </thead>
-
-          <tbody>
-            {filteredBooks.map((book) => (
-              <tr
-                key={book.isbn}
-                className={book.isActive ? styles.active : styles.deactivated}
-              >
-                <td>{book.title}</td>
-                <td>{book.author}</td>
-                <td>{book.category}</td>
-                <td>{book.isbn}</td>
-                <td>{moment(book.createdAt).format(dateFormat)}</td>
-                <td>{book.modifiedAt ? moment(book.modifiedAt).format(dateFormat) : "--"}</td>
-                <td>
-                  <Link
-                    className={styles.action}
-                    to={`/book/${book.id}`}
-                  >
-                    <EditIcon />
-                  </Link>
-                  <button
-                    className={styles.action}
-                    onClick={() => onDelete(book.id)}
-                    disabled={book.isActive}
-                  >
-                    <DeleteIcon />
-                  </button>
-                  <button
-                    className={styles.action}
-                    onClick={() => onToggleActive(book.id, book.isActive)}
-                  >
-                    {book.isActive ? <ToggleOn /> : <ToggleOff />}
-                  </button>
-                </td>
+      {filteredBooks.length ? (
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr className={styles.tableRow}>
+                {tableHeaders.map((header) => (
+                  <th key={header}>{header}</th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+
+            <tbody>
+              {filteredBooks.map((book) => (
+                <tr
+                  key={book.isbn}
+                  className={book.isActive ? styles.active : styles.deactivated}
+                >
+                  <td>{book.title}</td>
+                  <td>{book.author}</td>
+                  <td>{book.category}</td>
+                  <td>{book.isbn}</td>
+                  <td>{moment(book.createdAt).format(dateFormat)}</td>
+                  <td>{book.modifiedAt ? moment(book.modifiedAt).format(dateFormat) : "--"}</td>
+                  <td>
+                    <Link
+                      className={styles.action}
+                      to={`/book/${book.id}`}
+                    >
+                      <EditIcon />
+                    </Link>
+                    <button
+                      className={styles.action}
+                      onClick={() => onDelete(book.id)}
+                      disabled={book.isActive}
+                    >
+                      <DeleteIcon />
+                    </button>
+                    <button
+                      className={styles.action}
+                      onClick={() => onToggleActive(book.id, book.isActive)}
+                    >
+                      {book.isActive ? <ToggleOn /> : <ToggleOff />}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        "No books"
+      )}
     </>
   );
 };
