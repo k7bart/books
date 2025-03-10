@@ -1,0 +1,107 @@
+@use "./styles/variables.scss" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color: $text-color;
+  background-color: $base-color;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: bold;
+  color: $text-color;
+  text-decoration: inherit;
+  transition: 0.2s linear;
+
+  &:hover {
+    color: $text-color;
+  }
+}
+
+footer {
+  padding: 1rem 1rem 0;
+  border-top: 1px solid $muted-color;
+  text-align: center;
+
+  svg {
+    transition: 0.2s linear;
+    fill: $text-color-muted;
+
+    &:hover {
+      fill: $text-color;
+    }
+  }
+}
+
+.input-field {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid $muted-color;
+  color: $text-color;
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+::placeholder {
+  color: $muted-color;
+}
+
+option {
+  text-transform: capitalize;
+}
+
+.text-muted {
+  color: $muted-color;
+}
+
+form {
+  text-align: center;
+
+  input,
+  select {
+    color: $text-color;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid $muted-color;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  button[type="submit"] {
+    display: block;
+    margin-left: auto;
+    padding: 0.75rem 1rem;
+    background-color: $subtle-color;
+    color: $text-color-muted;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.75rem;
+    border: 1px solid $muted-color;
+    transition: 0.2s linear;
+
+    &:hover {
+      background-color: $base-color;
+      color: $text-color;
+    }
+  }
+}
