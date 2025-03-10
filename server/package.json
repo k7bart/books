@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "scripts": {
+    "start": "json-server db.json --middlewares ./handle-post.js ./handle-put.js"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
