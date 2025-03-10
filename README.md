@@ -1,6 +1,6 @@
-# Demo Book List
+# Demo Book List 📖
 
-CRUD react application within a REST architecture. It is written in **React** with **TypeScript** and **SCSS**. It use [fake REST API ^0.17.4](https://github.com/typicode/json-server) for CRUD operations. The application features a **responsive** layout, **custom hooks** and **Context API** for state management.
+**CRUD React** application within a **REST** architecture. It is written in **TypeScript** with **SCSS**. It uses [fake REST API ^0.17.4](https://github.com/typicode/json-server) for CRUD operations. The application features a **responsive** layout, **custom hooks** and **Context API** for state management.
 
 Here is a simple guide how to run the project.
 
